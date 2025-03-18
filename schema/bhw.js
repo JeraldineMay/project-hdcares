@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const bhwSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true },
   fullName: { type: String, required: true },
@@ -10,5 +9,4 @@ const bhwSchema = new mongoose.Schema({
   email: { type: String },
   assignedArea: { type: String } 
 });
-
-module.exports = mongoose.model('BHW', bhwSchema);
+module.exports = bhwSchema;
