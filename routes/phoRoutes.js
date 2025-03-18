@@ -1,10 +1,11 @@
 const express = require('express');
-const phoController = require('../controllers/phoController');
+const phoController = require('../controllers/control');
 const router = express.Router();
+
 router.get('/phos', phoController.getAllPHOs);
 router.get('/phos/:id', phoController.getPHOById);
 router.post('/phos', phoController.createPHO);
 router.put('/phos/:id', phoController.updatePHO);
-router.delete('/phos/:id', phoController.deletePHO);
+
 
 module.exports = router;
