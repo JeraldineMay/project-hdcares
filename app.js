@@ -21,11 +21,13 @@ mongoose.connect(uri, {
 });
 
 // Import Routes
+const patientRoutes = require('./routes/patientRoutes');
 const bhwRoutes = require('./routes/bhwRoutes');
 const rhuRoutes = require('./routes/rhuRoutes');
 const phoRoutes = require('./routes/phoRoutes');
 
 // Use Routes
+app.use('/api', patientRoutes);
 app.use('/api', bhwRoutes);
 app.use('/api', rhuRoutes);
 app.use('/api', phoRoutes);
