@@ -16,11 +16,11 @@ const rhuRoutes = require('./routes/rhuRoutes');
 const phoRoutes = require('./routes/phoRoutes');
 
 // Use Routes
-app.use('/bhw', bhwRoutes);
-app.use('/rhu', rhuRoutes);
-app.use('/pho', phoRoutes);
+app.use('/api', bhwRoutes);
+app.use('/api', rhuRoutes);
+app.use('/api', phoRoutes);
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log({
