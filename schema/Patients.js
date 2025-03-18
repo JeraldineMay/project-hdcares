@@ -7,7 +7,7 @@ const patientSchema = new mongoose.Schema({
   address: { type: String, required: true },
   contactNumber: { type: String },
   email: { type: String, required: true, unique: true },
-  category: { type: String, required: true, unique: true },
+  category: { type: String, required: true, },
   medicalHistory: { type: [String], default: [] }, 
   createdAt: { type: Date, default: Date.now },
 });
