@@ -8,6 +8,15 @@ const app = express();
 const { connectDB } = require('./config/db');
 connectDB();
 
+const bhwRoutes = require('./routes/bhwRoutes');
+const rhuRoutes = require('./routes/rhuRoutes');
+const phoRoutes = require('./routes/phoRoutes');
+
+// Use Routes
+app.use('/bhw', bhwRoutes);
+app.use('/rhu', rhuRoutes);
+app.use('/pho', phoRoutes);
+
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
