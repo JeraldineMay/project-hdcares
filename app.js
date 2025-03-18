@@ -1,26 +1,24 @@
 // Load environment variables
 require('dotenv').config();
 const express = require('express');
-const app = express();
 const mongoose = require('mongoose');
+
+const app = express();
 
 // Middleware to parse JSON requests
 app.use(express.json());
 
 // Connect to MongoDB Atlas
-const connectDB = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log(" Connected to MongoDB Atlas");
-  } catch (err) {
-    console.error("  MongoDB Connection Error:", err);
-    process.exit(1);
-  }
-};
-connectDB();
+const uri = "mongodb+srv://hduser:AQCDTKFtJUS8zhAO@cluster0.7njsn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+mongoose.connect(uri, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true 
+}).then(() => {
+    console.log("✅ Connected to MongoDB Atlas!");
+}).catch(err => {
+    console.error("❌ Error connecting to MongoDB:", err);
+});
 
 // Import Routes
 const bhwRoutes = require('./routes/bhwRoutes');
@@ -32,10 +30,10 @@ app.use('/api', bhwRoutes);
 app.use('/api', rhuRoutes);
 app.use('/api', phoRoutes);
 
+// Define the port
 const PORT = process.env.PORT || 3000;
 
+// Start the server
 app.listen(PORT, () => {
-  console.log({
-    message: `🚀 Server is running on port ${PORT}`,
-  });
+    console.log(`🚀 Server is running on port ${PORT}`);
 });
