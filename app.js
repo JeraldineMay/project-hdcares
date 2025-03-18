@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 // Connect to the database
-const { connectDB } = require('./project-hdcares/config/db');
+const { connectDB } = require('./config/db');
 connectDB();
 
 const PORT = process.env.PORT || 8080;
