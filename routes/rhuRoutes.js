@@ -1,5 +1,5 @@
 const express = require('express');
-const rhuController = require('../controllers/control');
+const rhuController = require('../controllers/rhuController');
 const router = express.Router();
 
 router.get('/rhus', rhuController.getAllRHUs);

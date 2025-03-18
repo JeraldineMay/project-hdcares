@@ -1,5 +1,5 @@
 const express = require('express');
-const phoController = require('../controllers/control');
+const phoController = require('../controllers/phoController');
 const router = express.Router();
 
 router.get('/phos', phoController.getAllPHOs);

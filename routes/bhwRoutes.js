@@ -1,5 +1,5 @@
 const express = require('express');
-const bhwController = require('../controllers/control'); 
+const bhwController = require('../controllers/bhwController');
 const router = express.Router();
 
 router.get('/bhws', bhwController.getAllBHWs);
